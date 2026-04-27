@@ -33,7 +33,7 @@ describe('Login', () => {
         // Arra nge
 
         // Acting
-        // cy.get('[data-test="username"]').type('standard_user');
+        cy.get('[data-test="username"]').type('standard_user');
         cy.get('[data-test="password"]').type('secret_sauce');
         cy.get('[data-test="login-button"]').click();
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
@@ -42,6 +42,7 @@ describe('Login', () => {
         // Assert
         cy.get('[data-test="title"]').should('contain', 'Your Cart');
     });
+
     it('Assert Checkout successfully', () => {
         // Arra nge
 
@@ -55,6 +56,7 @@ describe('Login', () => {
         // Assert
         cy.get('[data-test="title"]').should('contain', 'Your Cart');
     });
+    
     it('Assert Order Created successfully', () => {
         cy.get('[data-test="username"]').type('standard_user');
         cy.get('[data-test="password"]').type('secret_sauce');
