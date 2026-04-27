@@ -42,7 +42,7 @@ describe('Login', () => {
         // Assert
         cy.get('[data-test="title"]').should('contain', 'Your Cart');
     });
-    it.only('Assert Checkout successfully', () => {
+    it('Assert Checkout successfully', () => {
         // Arra nge
 
         // Acting
