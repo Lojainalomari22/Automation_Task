@@ -1,17 +1,17 @@
 describe('Login', () => {
-    beforeEach(()=> {
-    cy.visit('https://www.saucedemo.com/');
-    });
+    // beforeEach(()=> {
+    // cy.visit('https://www.saucedemo.com/');
+    // });
 
     it('can login successfully', () => {
         // Arrange
         // cy.visit('https://www.saucedemo.com/');
 
         // Acting
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
-
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         // Assert
         cy.url().should('contains', 'inventory.html');
     });
@@ -20,9 +20,10 @@ describe('Login', () => {
         // Arrange
 
         // Acting
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
 
         // Assert
@@ -33,9 +34,10 @@ describe('Login', () => {
         // Arra nge
 
         // Acting
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
         cy.get('[data-test="shopping-cart-link"]').click();
 
@@ -47,9 +49,10 @@ describe('Login', () => {
         // Arra nge
 
         // Acting
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
         cy.get('[data-test="shopping-cart-link"]').click();
 
@@ -58,9 +61,10 @@ describe('Login', () => {
     });
     
     it('Assert Order Created successfully', () => {
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
         cy.get('[data-test="shopping-cart-link"]').click();
         cy.get('[data-test="title"]').should('contain', 'Your Cart');
@@ -77,9 +81,10 @@ describe('Login', () => {
     });
 
     it('Assert Total Price added correctly', () => {
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
         cy.get('[data-test="add-to-cart-sauce-labs-fleece-jacket"]').click();
         cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
@@ -97,9 +102,10 @@ describe('Login', () => {
     });
 
     it('Removing from Cart successfully', () => {
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
         cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
         cy.get('[data-test="shopping-cart-badge"]').should('contain', '2');
@@ -110,9 +116,10 @@ describe('Login', () => {
 
     it('Reset App State work correctly', () => {
 
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
 
         // Assert
@@ -127,9 +134,10 @@ describe('Login', () => {
     });
 
     it('Assert Order Canceled successfully', () => {
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
         cy.get('[data-test="shopping-cart-link"]').click();
         cy.get('[data-test="title"]').should('contain', 'Your Cart');
@@ -146,9 +154,10 @@ describe('Login', () => {
     });
     
     it('Open Products page successfully', () => {
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         cy.get('[data-test="inventory-item-sauce-labs-bolt-t-shirt-img"]').click();
         cy.get('[data-test="back-to-products"]').should('exist');
 
@@ -159,26 +168,26 @@ describe('Login', () => {
         // cy.visit('https://www.saucedemo.com/');
 
         // Acting
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('worng_password');
-        cy.get('[data-test="login-button"]').click();
-
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('worng_password');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'worng_password');
         // Assert
         cy.url().should('not.contains', 'inventory.html');
         cy.get('[data-test="error"]').should('contain', 'Epic sadface: Username and password do not match any user in this service')
     });
 
     it('Social Links redirect successfully', () => {
-        cy.get('[data-test="username"]').type('standard_user');
-        cy.get('[data-test="password"]').type('secret_sauce');
-        cy.get('[data-test="login-button"]').click();
+        // cy.get('[data-test="username"]').type('standard_user');
+        // cy.get('[data-test="password"]').type('secret_sauce');
+        // cy.get('[data-test="login-button"]').click();
+        cy.login('standard_user', 'secret_sauce');
         // cy.get('[data-test="social-linkedin"]').click();
         // cy.url().should('contains', 'https://www.linkedin.com/company/sauce-labs/');
         cy.get('[data-test="social-linkedin"]').invoke('removeAttr', 'target').click();
         cy.url().should('include', 'https://www.linkedin.com/company/sauce-labs/');
 
     });
-
 
 })
  
